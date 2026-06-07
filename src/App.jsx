@@ -45,7 +45,7 @@ function StatItem({ icon, value, label, showDivider }) {
   )
 }
 
-function FeatureCard({ title, icon, subtitle, description, items }) {
+function FeatureCard({ title, icon, backImage, subtitle, description, items }) {
   return (
     <div className="feature-card-flip">
       <div className="feature-card-inner">
@@ -65,7 +65,7 @@ function FeatureCard({ title, icon, subtitle, description, items }) {
           </ul>
         </div>
         <div className="feature-card-back feature-card">
-          <h4 className="lms-font-bold feature-card-back-title">{title}</h4>
+          <img src={backImage} alt={title} className="feature-card-back-image" />
         </div>
       </div>
     </div>

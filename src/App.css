@@ -594,17 +594,16 @@
   position: absolute;
   inset: 0;
   transform: rotateY(180deg);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: #b3fdc3;
+  padding: 0;
+  overflow: hidden;
+  background: #fff;
 }
 
-.feature-card-back-title {
-  margin: 0;
-  font-size: 22px;
-  line-height: 1.3;
-  padding: 0 16px;
+.feature-card-back-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 .feature-card-header {

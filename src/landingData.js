@@ -34,6 +34,7 @@ export const faqItems = [
 export const modules = [
   {
     icon: 'interactive',
+    backImage: '/media/landing/interaktif-icerik.png',
     title: 'İnteraktif İçerik',
     subtitle: 'İzleme, Dokun ve Keşfet!',
     description:
@@ -46,6 +47,7 @@ export const modules = [
   },
   {
     icon: 'video',
+    backImage: '/media/landing/video-akademi.png',
     title: 'Video Akademi',
     subtitle: 'Uzman Kadrodan İster Detaylı, İster Pratik Anlatım',
     description:
@@ -58,6 +60,7 @@ export const modules = [
   },
   {
     icon: 'podcast',
+    backImage: '/media/landing/podcast.png',
     title: 'Podcast',
     subtitle: 'Zaman ve Mekan Sınırlarını Kaldırın',
     description:
@@ -70,6 +73,7 @@ export const modules = [
   },
   {
     icon: 'mindmap',
+    backImage: '/media/landing/kavram-haritasi.png',
     title: 'Kavram Haritası',
     subtitle: 'Büyük Resmi Tek Bakışta Görün',
     description:
@@ -82,6 +86,7 @@ export const modules = [
   },
   {
     icon: 'ai',
+    backImage: '/media/landing/yapay-zeka.png',
     title: 'Yapay Zeka ile Kişisel Öğrenme',
     subtitle: '7/24 Yanında Olan Akıllı Öğrenme Arkadaşın',
     description:
