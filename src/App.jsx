@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { faqItems, modules, stats } from './landingData'
+import { ModuleIcon } from './moduleIcons'
 import {
   InstitutionStatIcon,
   ParentStatIcon,
@@ -8,6 +9,9 @@ import {
 } from './statsIcons'
 import { EasyIcon, PersonalIcon, PlatformIcon } from './whyIcons'
 import './App.css'
+
+const STUDENT_LOGIN_URL = 'https://ogrenci.effora.com.tr/'
+const TEACHER_LOGIN_URL = 'https://kurumsal.effora.com.tr/signin'
 
 const statIcons = {
   student: StudentStatIcon,
@@ -41,21 +45,29 @@ function StatItem({ icon, value, label, showDivider }) {
   )
 }
 
-function FeatureCard({ title, subtitle, description, items }) {
+function FeatureCard({ title, icon, subtitle, description, items }) {
   return (
-    <div className="feature-card">
-      <div className="feature-card-header feature-card-header--green">
-        <h4 className="lms-font-bold feature-card-header-title">{title}</h4>
+    <div className="feature-card-flip">
+      <div className="feature-card-inner">
+        <div className="feature-card-front feature-card">
+          <div className="feature-card-header feature-card-header--green">
+            <ModuleIcon type={icon} className="feature-card-header-icon" />
+            <h4 className="lms-font-bold feature-card-header-title">{title}</h4>
+          </div>
+          <p>
+            <em>{subtitle}</em>
+          </p>
+          <p>{description}</p>
+          <ul className="text-left">
+            {items.map((item) => (
+              <li key={item}>{item}</li>
+            ))}
+          </ul>
+        </div>
+        <div className="feature-card-back feature-card">
+          <h4 className="lms-font-bold feature-card-back-title">{title}</h4>
+        </div>
       </div>
-      <p>
-        <em>{subtitle}</em>
-      </p>
-      <p>{description}</p>
-      <ul className="text-left">
-        {items.map((item) => (
-          <li key={item}>{item}</li>
-        ))}
-      </ul>
     </div>
   )
 }
@@ -118,7 +130,12 @@ function App() {
         <div className="container nav-inner">
           <img src="/media/logos/miray-logo-yatay.png" className="nav-logo" height="61" alt="Miray" />
           <div className="nav-actions">
-            <button type="button" className="btn-outline btn-outline-green">
+            <a
+              href={STUDENT_LOGIN_URL}
+              className="btn-outline btn-outline-green"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <svg viewBox="0 0 24 24" role="presentation" className="btn-icon" aria-hidden="true">
                 <path
                   d="M12,4A4,4 0 0,1 16,8A4,4 0 0,1 12,12A4,4 0 0,1 8,8A4,4 0 0,1 12,4M12,6A2,2 0 0,0 10,8A2,2 0 0,0 12,10A2,2 0 0,0 14,8A2,2 0 0,0 12,6M12,13C14.67,13 20,14.33 20,17V20H4V17C4,14.33 9.33,13 12,13M12,14.9C9.03,14.9 5.9,16.36 5.9,17V18.1H18.1V17C18.1,16.36 14.97,14.9 12,14.9Z"
@@ -126,7 +143,7 @@ function App() {
                 />
               </svg>
               Oturum Aç
-            </button>
+            </a>
           </div>
         </div>
       </nav>
@@ -167,7 +184,14 @@ function App() {
           </div>
           <div className="about-actions-wrap">
             <div className="about-actions-row">
-              <button type="button" className="btn-about btn-about-primary">Oturum Aç</button>
+              <a
+                href={STUDENT_LOGIN_URL}
+                className="btn-about btn-about-primary"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Oturum Aç
+              </a>
               <a href="#iletisim" className="btn-about btn-about-secondary">Bilgi Al</a>
             </div>
           </div>
@@ -176,7 +200,7 @@ function App() {
 
       <main className="section section-why">
         <div className="container text-center">
-          <img src="/media/landing/Visual.png" alt="" className="visual-image" />
+          <img src="/media/landing/effora-example.png" alt="" className="visual-image" />
           <h2 className="section-title">
             Neden <span className="text-pink">Biz </span>?
           </h2>
@@ -231,7 +255,7 @@ function App() {
         <div className="container text-center">
           <h2 className="section-title">İçerik Türlerimiz</h2>
           <h3 className="section-subtitle">Effora ile Öğren.</h3>
-          <div className="cards-grid cards-grid-3">
+          <div className="cards-grid cards-grid-3-2">
             {modules.map((module) => (
               <FeatureCard key={module.title} {...module} />
             ))}
@@ -267,32 +291,22 @@ function App() {
                 <p>Pazartesi - Cuma: 09:00 - 18:00</p>
               </div>
             </div>
-            <form className="contact-form" onSubmit={(e) => e.preventDefault()}>
-              <div className="contact-form-row">
-                <label className="contact-field">
-                  <span>Ad Soyad</span>
-                  <input type="text" name="name" placeholder="Adınız ve soyadınız" />
-                </label>
-                <label className="contact-field">
-                  <span>E-posta</span>
-                  <input type="email" name="email" placeholder="ornek@email.com" />
-                </label>
-              </div>
-              <label className="contact-field">
-                <span>Konu</span>
-                <input type="text" name="subject" placeholder="Mesajınızın konusu" />
-              </label>
-              <label className="contact-field">
-                <span>Mesaj</span>
-                <textarea name="message" rows="5" placeholder="Mesajınızı buraya yazın..." />
-              </label>
-              <button type="submit" className="btn-contact-submit">
-                Gönder
-              </button>
-            </form>
           </div>
         </div>
       </main>
+
+      <section className="section section-teacher-cta">
+        <div className="container text-center">
+          <a
+            href={TEACHER_LOGIN_URL}
+            className="btn-teacher-login"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Öğretmen Girişi
+          </a>
+        </div>
+      </section>
 
       <main className="section">
         <div className="container text-center">

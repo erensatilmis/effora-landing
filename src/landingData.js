@@ -33,6 +33,7 @@ export const faqItems = [
 
 export const modules = [
   {
+    icon: 'interactive',
     title: 'İnteraktif İçerik',
     subtitle: 'İzleme, Dokun ve Keşfet!',
     description:
@@ -44,17 +45,7 @@ export const modules = [
     ],
   },
   {
-    title: 'Podcast',
-    subtitle: 'Zaman ve Mekan Sınırlarını Kaldırın',
-    description:
-      'Öğrenmek için sadece ekrana bakmak zorunda değilsiniz. Yolda, sporda veya dinlenirken kulaklığınızı takın ve bilginin sesine odaklanın.',
-    items: [
-      'Akıcı ve hikayeleştirilmiş sesli anlatımlar',
-      'Gözleri yormadan, odaklanarak öğrenme kolaylığı',
-      'Her an, her yerde arka planda dinleme özgürlüğü',
-    ],
-  },
-  {
+    icon: 'video',
     title: 'Video Akademi',
     subtitle: 'Uzman Kadrodan İster Detaylı, İster Pratik Anlatım',
     description:
@@ -66,6 +57,19 @@ export const modules = [
     ],
   },
   {
+    icon: 'podcast',
+    title: 'Podcast',
+    subtitle: 'Zaman ve Mekan Sınırlarını Kaldırın',
+    description:
+      'Öğrenmek için sadece ekrana bakmak zorunda değilsiniz. Yolda, sporda veya dinlenirken kulaklığınızı takın ve bilginin sesine odaklanın.',
+    items: [
+      'Akıcı ve hikayeleştirilmiş sesli anlatımlar',
+      'Gözleri yormadan, odaklanarak öğrenme kolaylığı',
+      'Her an, her yerde arka planda dinleme özgürlüğü',
+    ],
+  },
+  {
+    icon: 'mindmap',
     title: 'Kavram Haritası',
     subtitle: 'Büyük Resmi Tek Bakışta Görün',
     description:
@@ -77,6 +81,7 @@ export const modules = [
     ],
   },
   {
+    icon: 'ai',
     title: 'Yapay Zeka ile Kişisel Öğrenme',
     subtitle: '7/24 Yanında Olan Akıllı Öğrenme Arkadaşın',
     description:
