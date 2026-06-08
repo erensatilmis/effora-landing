@@ -327,6 +327,9 @@
   display: block;
   position: relative;
   z-index: 1;
+  border-radius: 20px;
+  border: 1.3px solid #000;
+  box-shadow: rgb(0, 0, 0) 0 5px 0 0;
 }
 
 .why-grid {
