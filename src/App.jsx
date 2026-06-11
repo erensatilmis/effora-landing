@@ -190,7 +190,7 @@ function App() {
               className="hero-badge-logo"
             />
             <p className="hero-badge-text">
-              MİRAY YAYINLARI GÜVENCESİ VE TECRÜBESİ İLE
+              YILLARIN TECRÜBESİ, EĞİTİMDE MİRAY YAYINLARI GÜVENCESİ
             </p>
           </a>
         </div>
@@ -207,7 +207,7 @@ function App() {
               className="hero-badge-logo"
             />
             <p className="hero-badge-text">
-              MİRAY YAYINLARI GÜVENCESİ VE TECRÜBESİ İLE
+              YILLARIN TECRÜBESİ, EĞİTİMDE MİRAY YAYINLARI GÜVENCESİ
             </p>
           </a>
         </div>
