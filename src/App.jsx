@@ -288,17 +288,21 @@ function App() {
               <EasyIcon />
               <h3 className="lms-font-bold">Dev Soru Bankası (300.000+)</h3>
               <p className="text-left">
-                Başarı, bol ve nitelikli pratik yapmaktan geçer. Effora,
-                müfredatla tamamen uyumlu 300.000&apos;den fazla sorudan oluşan
-                devasa bir soru bankasına sahiptir. Öğrencilerin kendilerini
-                test edebileceği, eksiklerini görebileceği ve sınavlara eksiksiz
-                hazırlanabileceği zengin bir ölçme-değerlendirme havuzu sunar.
+                Başarının anahtarı nitelikli pratiktir. Müfredatla %100 uyumlu,
+                300.000&apos;den fazla sorudan oluşan dev havuzumuz sayesinde:
               </p>
+              <ul className="text-left">
+                <li>Kendinizi düzenli olarak test edin.</li>
+                <li>Eksiklerinizi anında tespit edin.</li>
+                <li>Sınavlara eksiksiz ve tam hazır olun.</li>
+              </ul>
             </div>
             <div className="why-divider" />
             <div className="why-item">
               <PersonalIcon />
-              <h3 className="lms-font-bold">Seni Tanır, Sana Özel Sunar</h3>
+              <h3 className="lms-font-bold">
+                Seni Tanır, Sana Özel Sorular Sunar
+              </h3>
               <p className="text-left">
                 Her öğrencinin öğrenme hızı ve ilgi alanı benzersizdir. Effora,
                 statik bir sistem olmak yerine kullanıcısını yakından tanır,
@@ -333,7 +337,7 @@ function App() {
       <main className="section section-modules">
         <div className="container text-center">
           <h2 className="section-title">İçerik Türlerimiz</h2>
-          <h3 className="section-subtitle">Effora ile Öğren.</h3>
+          <h3 className="section-subtitle">Effora ile Öğren</h3>
           <div className="cards-grid cards-grid-3-2">
             {modules.map((module) => (
               <FeatureCard key={module.title} {...module} />
