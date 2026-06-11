@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { faqItems, modules, stats } from "./landingData";
+import { useEffect, useState } from "react";
+import { faqItems, modules, references, stats } from "./landingData";
 import { ModuleIcon } from "./moduleIcons";
 import {
   InstitutionStatIcon,
@@ -159,6 +159,46 @@ function FeatureCard({ title, icon, backImage, subtitle, description, items }) {
             alt={title}
             className="feature-card-back-image"
           />
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function FoldingLogos({ items, interval = 3000 }) {
+  const [index, setIndex] = useState(0);
+
+  useEffect(() => {
+    if (items.length < 2) {
+      return undefined;
+    }
+    const timer = setInterval(() => {
+      setIndex((current) => (current + 1) % items.length);
+    }, interval);
+    return () => clearInterval(timer);
+  }, [items.length, interval]);
+
+  const prevIndex = (index - 1 + items.length) % items.length;
+  const current = items[index];
+  const previous = items[prevIndex];
+
+  return (
+    <div className="references-flip" aria-hidden="true">
+      <div className="flip-card">
+        <div className="flip-half flip-top flip-static">
+          <img src={current.logo} alt="" className="flip-logo" />
+        </div>
+        <div className="flip-half flip-bottom flip-static">
+          <img src={previous.logo} alt="" className="flip-logo" />
+        </div>
+        <div key={`top-${index}`} className="flip-half flip-top flip-flap-top">
+          <img src={previous.logo} alt="" className="flip-logo" />
+        </div>
+        <div
+          key={`bottom-${index}`}
+          className="flip-half flip-bottom flip-flap-bottom"
+        >
+          <img src={current.logo} alt="" className="flip-logo" />
         </div>
       </div>
     </div>
@@ -480,6 +520,25 @@ function App() {
             {modules.map((module) => (
               <FeatureCard key={module.title} {...module} />
             ))}
+          </div>
+        </div>
+      </main>
+
+      <main className="section section-references">
+        <div className="container">
+          <div className="references-layout">
+            <div className="references-text">
+              <h2 className="section-title">Referans Kurumlar</h2>
+              <h3 className="section-subtitle">
+                Türkiye&apos;nin önde gelen eğitim kurumları Effora&apos;ya
+                güveniyor.
+              </h3>
+              <p className="references-description">
+                Köklü kurumlardan yenilikçi okullara kadar pek çok eğitim
+                kuruluşu, dijital öğrenme süreçlerini Effora ile güçlendiriyor.
+              </p>
+            </div>
+            <FoldingLogos items={references} />
           </div>
         </div>
       </main>

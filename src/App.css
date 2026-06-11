@@ -683,6 +683,166 @@
   margin-bottom: 6px;
 }
 
+/* Reference institutions - folding logos */
+.section-references {
+  background: #e7defb;
+}
+
+.section-references .container {
+  max-width: 1340px;
+  padding: 2px 16px;
+}
+
+.references-layout {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  text-align: center;
+}
+
+.references-text {
+  flex: 1 1 0;
+}
+
+.section-references .section-title {
+  padding: 9.75px 0;
+  margin: 0 0 6.5px;
+}
+
+.section-references .section-subtitle {
+  margin: 9.75px 0;
+  font-size: 19.5px;
+  font-weight: 500;
+  line-height: 23.4px;
+  color: #3f4254;
+}
+
+.references-description {
+  margin: 12px 0 0;
+  line-height: 1.6;
+}
+
+.references-flip {
+  flex: 0 0 auto;
+  width: 280px;
+  height: 200px;
+  perspective: 1200px;
+}
+
+.flip-card {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  box-shadow: rgb(0, 0, 0) 0 5px 0 0;
+  transform-style: preserve-3d;
+}
+
+.flip-half {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 50%;
+  overflow: hidden;
+  background: #fff;
+  border: 1.3px solid #000;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.flip-top {
+  top: 0;
+  border-bottom-width: 0.65px;
+  border-radius: 20px 20px 0 0;
+}
+
+.flip-bottom {
+  top: 50%;
+  border-top-width: 0.65px;
+  border-radius: 0 0 20px 20px;
+}
+
+.flip-logo {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 200%;
+  object-fit: contain;
+  padding: 16px;
+  box-sizing: border-box;
+}
+
+.flip-top .flip-logo {
+  top: 0;
+}
+
+.flip-bottom .flip-logo {
+  top: -100%;
+}
+
+.flip-static {
+  z-index: 1;
+}
+
+.flip-flap-top {
+  z-index: 3;
+  transform-origin: bottom center;
+  animation: flip-fold-top 1.1s ease-in-out forwards;
+}
+
+.flip-flap-bottom {
+  z-index: 2;
+  transform-origin: top center;
+  animation: flip-fold-bottom 1.1s ease-in-out forwards;
+}
+
+@keyframes flip-fold-top {
+  0% {
+    transform: rotateX(0deg);
+  }
+  50%,
+  100% {
+    transform: rotateX(-90deg);
+  }
+}
+
+@keyframes flip-fold-bottom {
+  0%,
+  50% {
+    transform: rotateX(90deg);
+  }
+  100% {
+    transform: rotateX(0deg);
+  }
+}
+
+@media (min-width: 992px) {
+  .references-layout {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 56px;
+    text-align: left;
+  }
+
+  .references-flip {
+    width: 360px;
+    height: 240px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .flip-flap-top,
+  .flip-flap-bottom {
+    animation: none;
+  }
+
+  .flip-flap-top {
+    display: none;
+  }
+}
+
 /* Contact */
 .section-contact {
   padding: 32.5px 0;

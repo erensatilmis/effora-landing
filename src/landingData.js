@@ -104,3 +104,13 @@ export const stats = [
   { icon: "parent", value: "40.000 +", label: "Veli" },
   { icon: "institution", value: "28+", label: "Kurum" },
 ];
+
+export const references = [
+  { name: "Nesibe Aydın", logo: "/media/references/nesibe-aydin.jpg" },
+  { name: "Ankara Üniversitesi", logo: "/media/references/ankara-uni.png" },
+  { name: "Sınav Koleji", logo: "/media/references/sinav-koleji.png" },
+  {
+    name: "Milli Eğitim Bakanlığı",
+    logo: "/media/references/milli-egitim-bakanligi.png",
+  },
+];
