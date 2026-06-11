@@ -356,28 +356,39 @@ function App() {
             yanıtlayalım.
           </h3>
           <div className="contact-panel">
-            <div className="contact-info">
+            <div className="contact-card contact-info">
               <h4 className="lms-font-bold contact-info-title">
                 İletişim Bilgileri
               </h4>
               <div className="contact-info-item">
                 <span className="contact-info-label">Adres</span>
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
-                  do eiusmod tempor incididunt.
+                  Haymana Yolu 5. km, Karşıyaka Mah. 577. Sok. No:1, Gölbaşı,
+                  Ankara
                 </p>
               </div>
               <div className="contact-info-item">
                 <span className="contact-info-label">Telefon</span>
-                <p>+90 (212) 000 00 00</p>
+                <p>+90 (312) 418 10 02</p>
               </div>
               <div className="contact-info-item">
                 <span className="contact-info-label">E-posta</span>
-                <p>lorem.ipsum@dolor.sit</p>
+                <p>destek@effora.com.tr</p>
               </div>
               <div className="contact-info-item">
                 <span className="contact-info-label">Çalışma Saatleri</span>
                 <p>Pazartesi - Cuma: 09:00 - 18:00</p>
+              </div>
+            </div>
+            <div className="contact-card contact-map">
+              <div className="contact-map-frame">
+                <iframe
+                  title="Miray Yayınları konum haritası"
+                  src="https://maps.google.com/maps?q=Haymana+Yolu+5.km+Kar%C5%9F%C4%B1yaka+Mah.+577.+Sok.+No:1+G%C3%B6lba%C5%9F%C4%B1+Ankara&hl=tr&z=15&output=embed"
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  allowFullScreen
+                />
               </div>
             </div>
           </div>
