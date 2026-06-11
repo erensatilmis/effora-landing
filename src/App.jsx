@@ -270,13 +270,18 @@ function App() {
               <PlatformIcon />
               <h3 className="lms-font-bold">6 Farklı Türde Zengin İçerik</h3>
               <p className="text-left">
-                Tek bir öğrenme metoduna bağlı kalmayın. Effora; interaktif
-                içerikler, podcast&apos;ler, dinamik kavram haritaları, detaylı
-                konu anlatımlı videolar ve pratik özet videolar ile her öğrenme
-                stiline hitap eder. Üstelik gelişmiş yapay zeka ile öğrenme
-                altyapısı sayesinde, dijital eğitim süreçlerini tamamen akıllı
-                ve verimli bir boyuta taşır.
+                Tek bir öğrenme metoduna sıkışıp kalmayın. Effora, her öğrenme
+                stiline uygun zengin içerikler sunar:
               </p>
+              <ul className="text-left">
+                <li>İnteraktif İçerikler ve Podcast&apos;ler</li>
+                <li>Dinamik Kavram Haritaları</li>
+                <li>Detaylı Konu Anlatımları ve Pratik Özet Videoları</li>
+                <li>
+                  Gelişmiş yapay zekâ altyapımızla, dijital eğitim sürecinizi
+                  çok daha akıllı ve verimli hâle getiriyoruz.
+                </li>
+              </ul>
             </div>
             <div className="why-divider" />
             <div className="why-item">

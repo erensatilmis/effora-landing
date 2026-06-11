@@ -360,6 +360,17 @@
   margin: 12px 0;
 }
 
+.why-item ul {
+  margin: 8px 0 0;
+  padding-left: 0;
+  list-style-position: inside;
+  text-align: left;
+}
+
+.why-item li {
+  margin-bottom: 6px;
+}
+
 .why-divider {
   display: none;
 }
