@@ -1,35 +1,40 @@
-import { useState } from 'react'
-import { faqItems, modules, stats } from './landingData'
-import { ModuleIcon } from './moduleIcons'
+import { useState } from "react";
+import { faqItems, modules, stats } from "./landingData";
+import { ModuleIcon } from "./moduleIcons";
 import {
   InstitutionStatIcon,
   ParentStatIcon,
   StaffStatIcon,
   StudentStatIcon,
-} from './statsIcons'
-import { EasyIcon, PersonalIcon, PlatformIcon } from './whyIcons'
-import './App.css'
+} from "./statsIcons";
+import { EasyIcon, PersonalIcon, PlatformIcon } from "./whyIcons";
+import "./App.css";
 
-const STUDENT_LOGIN_URL = 'https://ogrenci.effora.com.tr/'
-const TEACHER_LOGIN_URL = 'https://kurumsal.effora.com.tr/signin'
+const STUDENT_LOGIN_URL = "https://ogrenci.effora.com.tr/";
+const TEACHER_LOGIN_URL = "https://kurumsal.effora.com.tr/signin";
 
 const statIcons = {
   student: StudentStatIcon,
   parent: ParentStatIcon,
   institution: InstitutionStatIcon,
   staff: StaffStatIcon,
-}
+};
 
 function PlusIcon() {
   return (
-    <svg viewBox="0 0 24 24" role="presentation" className="accordion-icon" aria-hidden="true">
+    <svg
+      viewBox="0 0 24 24"
+      role="presentation"
+      className="accordion-icon"
+      aria-hidden="true"
+    >
       <path d="M19,13H13V19H11V13H5V11H11V5H13V11H19V13Z" fill="currentColor" />
     </svg>
-  )
+  );
 }
 
 function StatItem({ icon, value, label, showDivider }) {
-  const Icon = statIcons[icon]
+  const Icon = statIcons[icon];
 
   return (
     <div className="stat-item">
@@ -42,7 +47,7 @@ function StatItem({ icon, value, label, showDivider }) {
       </div>
       {showDivider ? <div className="stat-divider" aria-hidden="true" /> : null}
     </div>
-  )
+  );
 }
 
 function FeatureCard({ title, icon, backImage, subtitle, description, items }) {
@@ -65,15 +70,19 @@ function FeatureCard({ title, icon, backImage, subtitle, description, items }) {
           </ul>
         </div>
         <div className="feature-card-back feature-card">
-          <img src={backImage} alt={title} className="feature-card-back-image" />
+          <img
+            src={backImage}
+            alt={title}
+            className="feature-card-back-image"
+          />
         </div>
       </div>
     </div>
-  )
+  );
 }
 
 function FaqAccordion({ items }) {
-  const [openIndex, setOpenIndex] = useState(null)
+  const [openIndex, setOpenIndex] = useState(null);
 
   return (
     <div className="accordion">
@@ -90,37 +99,46 @@ function FaqAccordion({ items }) {
         </div>
         <div className="accordion-column">
           {items.slice(3).map((item, index) => {
-            const realIndex = index + 3
+            const realIndex = index + 3;
             return (
               <FaqItem
                 key={item.question}
                 item={item}
                 isOpen={openIndex === realIndex}
-                onToggle={() => setOpenIndex(openIndex === realIndex ? null : realIndex)}
+                onToggle={() =>
+                  setOpenIndex(openIndex === realIndex ? null : realIndex)
+                }
               />
-            )
+            );
           })}
         </div>
       </div>
     </div>
-  )
+  );
 }
 
 function FaqItem({ item, isOpen, onToggle }) {
   return (
     <div className="accordion-item">
       <h2 className="accordion-header">
-        <button type="button" className={`accordion-button ${isOpen ? 'open' : ''}`} onClick={onToggle} aria-expanded={isOpen}>
+        <button
+          type="button"
+          className={`accordion-button ${isOpen ? "open" : ""}`}
+          onClick={onToggle}
+          aria-expanded={isOpen}
+        >
           <div className="accordion-button-inner">
             <p className="lms-font-bold accordion-question">{item.question}</p>
             <PlusIcon />
           </div>
         </button>
       </h2>
-      {isOpen ? <div className="accordion-body text-left">{item.answer}</div> : null}
+      {isOpen ? (
+        <div className="accordion-body text-left">{item.answer}</div>
+      ) : null}
       <div className="accordion-divider" />
     </div>
-  )
+  );
 }
 
 function App() {
@@ -128,7 +146,12 @@ function App() {
     <div className="landing-page">
       <nav className="landing-nav">
         <div className="container nav-inner">
-          <img src="/media/logos/miray-logo-yatay.png" className="nav-logo" height="61" alt="Miray" />
+          <img
+            src="/media/logos/miray-logo-yatay.png"
+            className="nav-logo"
+            height="61"
+            alt="Miray"
+          />
           <div className="nav-actions">
             <a
               href={STUDENT_LOGIN_URL}
@@ -136,7 +159,12 @@ function App() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <svg viewBox="0 0 24 24" role="presentation" className="btn-icon" aria-hidden="true">
+              <svg
+                viewBox="0 0 24 24"
+                role="presentation"
+                className="btn-icon"
+                aria-hidden="true"
+              >
                 <path
                   d="M12,4A4,4 0 0,1 16,8A4,4 0 0,1 12,12A4,4 0 0,1 8,8A4,4 0 0,1 12,4M12,6A2,2 0 0,0 10,8A2,2 0 0,0 12,10A2,2 0 0,0 14,8A2,2 0 0,0 12,6M12,13C14.67,13 20,14.33 20,17V20H4V17C4,14.33 9.33,13 12,13M12,14.9C9.03,14.9 5.9,16.36 5.9,17V18.1H18.1V17C18.1,16.36 14.97,14.9 12,14.9Z"
                   fill="currentColor"
@@ -150,17 +178,37 @@ function App() {
 
       <div className="hero-section">
         <div className="hero-desktop">
-          <img src="/media/landing/banner.svg" alt="Banner background" className="hero-bg" />
+          <img
+            src="/media/landing/banner.svg"
+            alt="Banner background"
+            className="hero-bg"
+          />
           <a href="#iletisim" className="hero-badge">
-            <img src="/media/logos/miray-logo.png" alt="Miray Yayınları" className="hero-badge-logo" />
-            <p className="hero-badge-text">MİRAY YAYINLARI GÜVENCESİ VE TECRÜBESİ İLE</p>
+            <img
+              src="/media/logos/miray-logo.png"
+              alt="Miray Yayınları"
+              className="hero-badge-logo"
+            />
+            <p className="hero-badge-text">
+              MİRAY YAYINLARI GÜVENCESİ VE TECRÜBESİ İLE
+            </p>
           </a>
         </div>
         <div className="hero-mobile">
-          <img src="/media/landing/banner-mobile.svg" alt="Banner background mobile" className="hero-bg" />
+          <img
+            src="/media/landing/banner-mobile.svg"
+            alt="Banner background mobile"
+            className="hero-bg"
+          />
           <a href="#iletisim" className="hero-badge">
-            <img src="/media/logos/miray-logo.png" alt="Miray Yayınları" className="hero-badge-logo" />
-            <p className="hero-badge-text">MİRAY YAYINLARI GÜVENCESİ VE TECRÜBESİ İLE</p>
+            <img
+              src="/media/logos/miray-logo.png"
+              alt="Miray Yayınları"
+              className="hero-badge-logo"
+            />
+            <p className="hero-badge-text">
+              MİRAY YAYINLARI GÜVENCESİ VE TECRÜBESİ İLE
+            </p>
           </a>
         </div>
       </div>
@@ -170,16 +218,23 @@ function App() {
           <h2 className="section-title">
             <span className="text-purple">Effora </span>Nedir?
           </h2>
-          <h3 className="section-subtitle">Etkili, Modern, Kişiselleştirilmiş: EFFORA Öğrenme Sürecini Yeniden Tanımlar.</h3>
+          <h3 className="section-subtitle">
+            Etkili, Modern, Kişiselleştirilmiş: Effora Öğrenme Sürecini Yeniden
+            Tanımlar.
+          </h3>
           <div className="about-content">
             <p>
-              Modern arayüzü, yenilikçi modülleri, kullanım kolaylığı ve etkin destek ekibi ile EFFORA
-              <b> Eğitim Platformu</b>, tüm eğitim <br className="hide-mobile" /> kademelerinde kullanıma uygun bir öğrenme platformudur.
+              Modern arayüzü, yenilikçi modülleri, kullanım kolaylığı ve etkin
+              destek ekibi ile Effora
+              <b> Eğitim Platformu</b>, tüm eğitim{" "}
+              <br className="hide-mobile" /> kademelerinde kullanıma uygun bir
+              öğrenme platformudur.
             </p>
             <p className="about-paragraph">
-              Kullanımı kolaydır, öğrenme süreçlerini kişiselleştirilmiş yöntemlerle zenginleştirir.{' '}
-              <br className="hide-mobile" />
-              EFFORA ile farklı türdeki öğrenme metotlarını keşfet ve öğrenmeyi kolaylaştır.
+              Kullanımı kolaydır, öğrenme süreçlerini kişiselleştirilmiş
+              yöntemlerle zenginleştirir. <br className="hide-mobile" />
+              Effora ile farklı türdeki öğrenme metotlarını keşfet ve öğrenmeyi
+              kolaylaştır.
             </p>
           </div>
           <div className="about-actions-wrap">
@@ -192,7 +247,9 @@ function App() {
               >
                 Oturum Aç
               </a>
-              <a href="#iletisim" className="btn-about btn-about-secondary">Bilgi Al</a>
+              <a href="#iletisim" className="btn-about btn-about-secondary">
+                Bilgi Al
+              </a>
             </div>
           </div>
         </div>
@@ -200,7 +257,11 @@ function App() {
 
       <main className="section section-why">
         <div className="container text-center">
-          <img src="/media/landing/effora-example.png" alt="" className="visual-image" />
+          <img
+            src="/media/landing/effora-example.png"
+            alt=""
+            className="visual-image"
+          />
           <h2 className="section-title">
             Neden <span className="text-pink">Biz </span>?
           </h2>
@@ -209,7 +270,12 @@ function App() {
               <PlatformIcon />
               <h3 className="lms-font-bold">6 Farklı Türde Zengin İçerik</h3>
               <p className="text-left">
-                Tek bir öğrenme metoduna bağlı kalmayın. Effora; interaktif içerikler, podcast&apos;ler, dinamik kavram haritaları, detaylı konu anlatımlı videolar ve pratik özet videolar ile her öğrenme stiline hitap eder. Üstelik gelişmiş yapay zeka ile öğrenme altyapısı sayesinde, dijital eğitim süreçlerini tamamen akıllı ve verimli bir boyuta taşır.
+                Tek bir öğrenme metoduna bağlı kalmayın. Effora; interaktif
+                içerikler, podcast&apos;ler, dinamik kavram haritaları, detaylı
+                konu anlatımlı videolar ve pratik özet videolar ile her öğrenme
+                stiline hitap eder. Üstelik gelişmiş yapay zeka ile öğrenme
+                altyapısı sayesinde, dijital eğitim süreçlerini tamamen akıllı
+                ve verimli bir boyuta taşır.
               </p>
             </div>
             <div className="why-divider" />
@@ -217,7 +283,11 @@ function App() {
               <EasyIcon />
               <h3 className="lms-font-bold">Dev Soru Bankası (300.000+)</h3>
               <p className="text-left">
-                Başarı, bol ve nitelikli pratik yapmaktan geçer. Effora, müfredatla tamamen uyumlu 300.000&apos;den fazla sorudan oluşan devasa bir soru bankasına sahiptir. Öğrencilerin kendilerini test edebileceği, eksiklerini görebileceği ve sınavlara eksiksiz hazırlanabileceği zengin bir ölçme-değerlendirme havuzu sunar.
+                Başarı, bol ve nitelikli pratik yapmaktan geçer. Effora,
+                müfredatla tamamen uyumlu 300.000&apos;den fazla sorudan oluşan
+                devasa bir soru bankasına sahiptir. Öğrencilerin kendilerini
+                test edebileceği, eksiklerini görebileceği ve sınavlara eksiksiz
+                hazırlanabileceği zengin bir ölçme-değerlendirme havuzu sunar.
               </p>
             </div>
             <div className="why-divider" />
@@ -225,7 +295,11 @@ function App() {
               <PersonalIcon />
               <h3 className="lms-font-bold">Seni Tanır, Sana Özel Sunar</h3>
               <p className="text-left">
-                Her öğrencinin öğrenme hızı ve ilgi alanı benzersizdir. Effora, statik bir sistem olmak yerine kullanıcısını yakından tanır, performansını analiz eder ve tamamen ona özel kişiselleştirilmiş bir içerik akışı sunar. Odaklanılması gereken konuları belirleyerek bireysel başarıyı maksimuma çıkarır.
+                Her öğrencinin öğrenme hızı ve ilgi alanı benzersizdir. Effora,
+                statik bir sistem olmak yerine kullanıcısını yakından tanır,
+                performansını analiz eder ve tamamen ona özel kişiselleştirilmiş
+                bir içerik akışı sunar. Odaklanılması gereken konuları
+                belirleyerek bireysel başarıyı maksimuma çıkarır.
               </p>
             </div>
           </div>
@@ -269,14 +343,20 @@ function App() {
             <span className="text-light-purple">Bizimle</span> İletişime Geçin
           </h2>
           <h3 className="section-contact-subtitle">
-            Bize ulaşın, alanında uzman ekibimiz ile aklınızdaki soruları yanıtlayalım.
+            Bize ulaşın, alanında uzman ekibimiz ile aklınızdaki soruları
+            yanıtlayalım.
           </h3>
           <div className="contact-panel">
             <div className="contact-info">
-              <h4 className="lms-font-bold contact-info-title">İletişim Bilgileri</h4>
+              <h4 className="lms-font-bold contact-info-title">
+                İletişim Bilgileri
+              </h4>
               <div className="contact-info-item">
                 <span className="contact-info-label">Adres</span>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt.</p>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
+                  do eiusmod tempor incididunt.
+                </p>
               </div>
               <div className="contact-info-item">
                 <span className="contact-info-label">Telefon</span>
@@ -311,13 +391,15 @@ function App() {
       <main className="section">
         <div className="container text-center">
           <h2 className="section-title">Sıkça Sorulan Sorular</h2>
-          <h3 className="section-subtitle">İşte merak edebileceğinizi düşündüğümüz bir kaç soru ve detaylı cevapları:</h3>
+          <h3 className="section-subtitle">
+            İşte merak edebileceğinizi düşündüğümüz bir kaç soru ve detaylı
+            cevapları:
+          </h3>
           <FaqAccordion items={faqItems} />
         </div>
       </main>
-
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
