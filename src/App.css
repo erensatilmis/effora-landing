@@ -634,13 +634,15 @@
 }
 
 .feature-card-header--green::before {
-  content: '';
+  content: "";
   position: absolute;
   inset: 0;
   background-image:
     radial-gradient(circle, rgba(6, 174, 86, 0.35) 1px, transparent 1px),
     linear-gradient(135deg, rgba(6, 174, 86, 0.08) 25%, transparent 25%);
-  background-size: 14px 14px, 28px 28px;
+  background-size:
+    14px 14px,
+    28px 28px;
   opacity: 0.22;
   pointer-events: none;
 }
@@ -811,7 +813,9 @@
   box-shadow: rgb(0, 0, 0) 0 6px 0 0;
   text-decoration: none;
   text-align: center;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
 .btn-teacher-login:hover {
@@ -902,6 +906,65 @@
   background: #000;
 }
 
+/* Footer */
+.landing-footer {
+  background: #3f4254;
+  padding: 24px 0;
+}
+
+.footer-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  text-align: center;
+}
+
+.footer-copyright {
+  margin: 0;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.footer-link {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.9);
+  cursor: default;
+}
+
+.footer-social {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255, 255, 255, 0.9);
+  cursor: default;
+}
+
+.footer-social-icon {
+  width: 22px;
+  height: 22px;
+}
+
+@media (min-width: 768px) {
+  .footer-inner {
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: left;
+  }
+
+  .footer-links {
+    justify-content: flex-end;
+  }
+}
+
 /* Floating contact buttons */
 .floating-contact {
   position: fixed;
@@ -926,7 +989,9 @@
   font-weight: 700;
   line-height: 1;
   text-decoration: none;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
 .floating-contact-btn:hover {
