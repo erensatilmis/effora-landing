@@ -602,6 +602,13 @@
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
+  transition: visibility 0s linear 0.3s;
+}
+
+@media (hover: hover) {
+  .feature-card-flip:hover .feature-card-front {
+    visibility: hidden;
+  }
 }
 
 .feature-card-back {
