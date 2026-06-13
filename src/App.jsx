@@ -165,6 +165,50 @@ function FeatureCard({ title, icon, backImage, subtitle, description, items }) {
   );
 }
 
+const aboutHighlights = [
+  {
+    label: "Modern Arayüz",
+    color: "#a162ff",
+    path: "M13,3V9H21V3M13,21H21V11H13M3,21H11V15H3M3,13H11V3H3V13Z",
+  },
+  {
+    label: "Yenilikçi Modüller",
+    color: "#06ae56",
+    path: "M20.5,11H19V7C19,5.89 18.1,5 17,5H13V3.5A2.5,2.5 0 0,0 10.5,1A2.5,2.5 0 0,0 8,3.5V5H4A2,2 0 0,0 2,7V10.8H3.5C5,10.8 6.2,12 6.2,13.5C6.2,15 5,16.2 3.5,16.2H2V20A2,2 0 0,0 4,22H7.8V20.5C7.8,19 9,17.8 10.5,17.8C12,17.8 13.2,19 13.2,20.5V22H17A2,2 0 0,0 19,20V16H20.5A2.5,2.5 0 0,0 23,13.5A2.5,2.5 0 0,0 20.5,11Z",
+  },
+  {
+    label: "Kolay Kullanım",
+    color: "#0066fe",
+    path: "M23,10C23,8.89 22.1,8 21,8H14.68L15.64,3.43C15.66,3.33 15.67,3.22 15.67,3.11C15.67,2.7 15.5,2.32 15.23,2.05L14.17,1L7.59,7.58C7.22,7.95 7,8.45 7,9V19A2,2 0 0,0 9,21H18C18.83,21 19.54,20.5 19.84,19.78L22.86,12.73C22.95,12.5 23,12.26 23,12V10M1,21H5V9H1V21Z",
+  },
+  {
+    label: "Etkin Destek",
+    color: "#ef5e79",
+    path: "M12,1C7,1 3,5 3,10V17A3,3 0 0,0 6,20H9V12H5V10A7,7 0 0,1 12,3A7,7 0 0,1 19,10V12H15V20H19V21H12V23H18A3,3 0 0,0 21,20V10C21,5 16.97,1 12,1Z",
+  },
+];
+
+function AboutHighlights() {
+  return (
+    <div className="about-highlights">
+      {aboutHighlights.map((item) => (
+        <div key={item.label} className="about-highlight">
+          <span
+            className="about-highlight-icon"
+            style={{ color: item.color }}
+            aria-hidden="true"
+          >
+            <svg viewBox="0 0 24 24">
+              <path d={item.path} fill="currentColor" />
+            </svg>
+          </span>
+          <span className="about-highlight-label">{item.label}</span>
+        </div>
+      ))}
+    </div>
+  );
+}
+
 function FoldingLogos({ items, interval = 3000 }) {
   const [index, setIndex] = useState(0);
 
@@ -400,34 +444,35 @@ function App() {
             Etkili, Modern, Kişiselleştirilmiş: Effora Öğrenme Sürecini Yeniden
             Tanımlar.
           </h3>
-          <div className="about-content">
-            <p>
-              Modern arayüzü, yenilikçi modülleri, kullanım kolaylığı ve etkin
-              destek ekibi ile Effora
-              <b> Eğitim Platformu</b>, tüm eğitim{" "}
-              <br className="hide-mobile" /> kademelerinde kullanıma uygun bir
-              öğrenme platformudur.
-            </p>
-            <p className="about-paragraph">
-              Kullanımı kolaydır, öğrenme süreçlerini kişiselleştirilmiş
-              yöntemlerle zenginleştirir. <br className="hide-mobile" />
-              Effora ile farklı türdeki öğrenme metotlarını keşfet ve öğrenmeyi
-              kolaylaştır.
-            </p>
-          </div>
-          <div className="about-actions-wrap">
-            <div className="about-actions-row">
-              <a
-                href={STUDENT_LOGIN_URL}
-                className="btn-about btn-about-primary"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Oturum Aç
-              </a>
-              <a href="#iletisim" className="btn-about btn-about-secondary">
-                Bilgi Al
-              </a>
+          <div className="about-card">
+            <span className="about-card-badge">Eğitim Platformu</span>
+            <div className="about-content">
+              <p>
+                Modern arayüzü, yenilikçi modülleri, kullanım kolaylığı ve etkin
+                destek ekibi ile Effora <b>Eğitim Platformu</b>, tüm eğitim
+                kademelerinde kullanıma uygun bir öğrenme platformudur.
+              </p>
+              <p className="about-paragraph">
+                Kullanımı kolaydır, öğrenme süreçlerini kişiselleştirilmiş
+                yöntemlerle zenginleştirir. Effora ile farklı türdeki öğrenme
+                metotlarını keşfet ve öğrenmeyi kolaylaştır.
+              </p>
+            </div>
+            <AboutHighlights />
+            <div className="about-actions-wrap">
+              <div className="about-actions-row">
+                <a
+                  href={STUDENT_LOGIN_URL}
+                  className="btn-about btn-about-primary"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Oturum Aç
+                </a>
+                <a href="#iletisim" className="btn-about btn-about-secondary">
+                  Bilgi Al
+                </a>
+              </div>
             </div>
           </div>
         </div>
